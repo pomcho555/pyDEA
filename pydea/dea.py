@@ -139,10 +139,8 @@ class DEAProblem:
                 m = re.search(r'[0-9]+$',key)
                 i = int(m.group(0))
                 if key.startswith("input"):
-                    i = int(key[-1])
                     tmp_dict[dmu]["in_" + str(self.inputs.columns[i])] = d[key]
                 if key.startswith("output"):
-                    i = int(key[-1])
                     tmp_dict[dmu][
                         "out_" + str(self.outputs.columns[i])] = d[key]
         weight_results = pd.DataFrame.from_dict(tmp_dict).T
